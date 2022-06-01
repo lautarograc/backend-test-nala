@@ -8,6 +8,8 @@ class Api::Exposed::V1::EmployeeSerializer < ActiveModel::Serializer
     :email,
     :position,
     :salary,
+    :city,
+    :country,
     :active,
     :starting_date,
     :created_at,
