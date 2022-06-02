@@ -29,6 +29,7 @@ RSpec.describe 'Api::Exposed::V1::EmployeesControllers', type: :request do
           salary: 666,
           city: 'Some city',
           country: 'Some country',
+          status: 'probationary',
           active: true,
           starting_date: 'Some starting_date'
         }
@@ -53,6 +54,11 @@ RSpec.describe 'Api::Exposed::V1::EmployeesControllers', type: :request do
     it { expect(response.status).to eq(201) }
     it "can't create employee with duplicate email" do
       params[:employee][:personal_id] = 'Some non-duplicated personal_id'
+      perform
+      expect(response.status).to eq(400)
+    end
+    it "can't create employee with unvalid status" do
+      params[:employee][:status] = 'non-valid'
       perform
       expect(response.status).to eq(400)
     end

@@ -9,5 +9,6 @@ FactoryBot.define do
     country { "MyString" }
     active { false }
     starting_date { "MyString" }
+    status { "probationary" }
   end
 end
