@@ -10,6 +10,7 @@ class Api::Exposed::V1::EmployeeSerializer < ActiveModel::Serializer
     :salary,
     :city,
     :country,
+    :status,
     :active,
     :starting_date,
     :created_at,

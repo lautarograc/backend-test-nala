@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_02_043856) do
+ActiveRecord::Schema.define(version: 2022_06_02_052913) do
 
   create_table "employees", force: :cascade do |t|
     t.string "full_name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_06_02_043856) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city"
     t.string "country"
+    t.string "status", default: "regular"
     t.index ["email"], name: "index_employees_on_email", unique: true
   end
 
