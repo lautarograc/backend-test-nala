@@ -33,6 +33,8 @@ class Api::Exposed::V1::EmployeesController < Api::Exposed::V1::BaseController
       :email,
       :position,
       :salary,
+      :city,
+      :country,
       :active,
       :starting_date
     )

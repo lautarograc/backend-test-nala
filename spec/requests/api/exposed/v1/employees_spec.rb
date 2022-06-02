@@ -27,11 +27,14 @@ RSpec.describe 'Api::Exposed::V1::EmployeesControllers', type: :request do
           email: 'Some email',
           position: 'Some position',
           salary: 666,
+          city: 'Some city',
+          country: 'Some country',
           active: true,
           starting_date: 'Some starting_date'
         }
       }
     end
+
 
     let(:attributes) do
       JSON.parse(response.body)['employee'].symbolize_keys
