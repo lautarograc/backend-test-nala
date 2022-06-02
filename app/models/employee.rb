@@ -1,4 +1,4 @@
 class Employee < ApplicationRecord
-  validates :full_name, :email, :position, presence: true
-  validates :personal_id, presence: true, uniqueness: true
+  validates :full_name, :position, presence: true
+  validates :personal_id, :email, presence: true, uniqueness: true
 end

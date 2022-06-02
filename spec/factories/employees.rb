@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :employee do
     full_name { "MyString" }
     sequence(:personal_id) { |n| "MyString#{n}" }
-    email { "MyString" }
+    sequence(:email) { |n| "MyString#{n}" }
     position { "MyString" }
     salary { 1 }
     city { "MyString" }

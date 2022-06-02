@@ -40,6 +40,7 @@ RSpec.describe 'Api::Exposed::V1::EmployeesControllers', type: :request do
       JSON.parse(response.body)['employee'].symbolize_keys
     end
 
+
     def perform
       post '/api/v1/employees', params: params
     end
@@ -50,6 +51,11 @@ RSpec.describe 'Api::Exposed::V1::EmployeesControllers', type: :request do
 
     it { expect(attributes).to include(params[:employee]) }
     it { expect(response.status).to eq(201) }
+    it "can't create employee with duplicate email" do
+      params[:employee][:personal_id] = 'Some non-duplicated personal_id'
+      perform
+      expect(response.status).to eq(400)
+    end
   end
 
   describe 'GET /show' do
